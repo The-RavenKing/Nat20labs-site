@@ -40,9 +40,9 @@ function App() {
             <img 
               src="/logo.webp" 
               alt="Nat 20 Labs" 
-              width="48" 
-              height="48" 
-              style={{ objectFit: 'contain' }} 
+              width="200" 
+              height="200" 
+              style={{ objectFit: 'contain', display: 'block' }} 
             />
           </a>
           <div className="nav-links">
@@ -190,7 +190,7 @@ function App() {
       <footer>
         <div className="container">
           <div style={{ marginBottom: '2rem' }}>
-            <img src="/logo.webp" alt="Nat 20 Labs" width="64" height="64" style={{ objectFit: 'contain' }} />
+            <img src="/logo.webp" alt="Nat 20 Labs" width="200" height="200" style={{ objectFit: 'contain', margin: '0 auto' }} />
           </div>
           <p style={{ fontSize: '0.9rem' }}>&copy; {new Date().getFullYear()} Nat 20 Labs. All rights reserved.</p>
         </div>
