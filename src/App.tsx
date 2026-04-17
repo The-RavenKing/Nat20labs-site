@@ -37,10 +37,15 @@ function App() {
     <div className="app">
       <header>
         <nav className={`navbar container ${scrolled ? 'navbar-scrolled' : ''}`}>
-          <div className="logo" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-            <img src="/n20l_logo.png" alt="" width="32" height="32" style={{ objectFit: 'contain' }} />
-            NAT 20 <span>LABS</span>
-          </div>
+          <a href="/" className="logo" style={{ display: 'flex', alignItems: 'center' }}>
+            <img 
+              src="/n20l_logo.png" 
+              alt="Nat 20 Labs" 
+              width="48" 
+              height="48" 
+              style={{ objectFit: 'contain' }} 
+            />
+          </a>
           <div className="nav-links">
             <a href="#services">Services</a>
             <a href="#seo">SEO</a>
@@ -185,8 +190,8 @@ function App() {
 
       <footer>
         <div className="container">
-          <div style={{ marginBottom: '2rem', fontSize: '1.25rem', fontWeight: 900 }}>
-            NAT 20 <span style={{ color: 'var(--accent)' }}>LABS</span>
+          <div style={{ marginBottom: '2rem' }}>
+            <img src="/n20l_logo.png" alt="Nat 20 Labs" width="64" height="64" style={{ objectFit: 'contain' }} />
           </div>
           <p style={{ fontSize: '0.9rem' }}>&copy; {new Date().getFullYear()} Nat 20 Labs. All rights reserved.</p>
         </div>
