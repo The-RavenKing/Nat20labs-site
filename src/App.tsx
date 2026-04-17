@@ -52,7 +52,7 @@ function App() {
               <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>
                 At Nat 20 Labs, we treat SEO as an engineering problem. We optimize site architecture, performance, and semantic structure to ensure search engines love your site as much as your users do.
               </p>
-              <ul style={{ list-style: 'none', color: 'var(--accent)' }}>
+              <ul style={{ listStyle: 'none', color: 'var(--accent)' }}>
                 <li>✓ Core Web Vitals Optimization</li>
                 <li>✓ Semantic HTML & Schema Markup</li>
                 <li>✓ Strategic Content Roadmap</li>
