@@ -128,7 +128,53 @@ footer {
 .markdown-content h2 { font-size: 2.5rem; margin-top: 3rem; }
 .markdown-content p { margin-bottom: 1.5rem; }
 
-@media (max-width: 1024px) {
+/* Navbar Enhancements */
+.navbar .logo {
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+.navbar .logo span {
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.nav-btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  .nav-links { 
+    display: none; 
+  }
+  
+  .navbar .logo {
+    font-size: 1.1rem;
+  }
+  
+  .nav-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+
   .bento-grid { grid-template-columns: 1fr; }
   .span-4, .span-8 { grid-column: span 12; }
   .seo-split { grid-template-columns: 1fr; padding: 3rem; text-align: center; }

@@ -37,16 +37,16 @@ function App() {
     <div className="app">
       <header>
         <nav className={`navbar container ${scrolled ? 'navbar-scrolled' : ''}`}>
-          <div className="logo" style={{ fontSize: '1.25rem', fontWeight: 900 }}>
-            NAT 20 <span style={{ color: 'var(--accent)' }}>LABS</span>
+          <div className="logo">
+            NAT 20 <span>LABS</span>
           </div>
-          <div className="nav-links" style={{ display: 'flex', gap: '2rem' }}>
-            <a href="#services" style={{ textDecoration: 'none', color: 'var(--text-secondary)', fontWeight: 500, fontSize: '0.9rem' }}>Services</a>
-            <a href="#seo" style={{ textDecoration: 'none', color: 'var(--text-secondary)', fontWeight: 500, fontSize: '0.9rem' }}>SEO</a>
-            <a href="#portfolio" style={{ textDecoration: 'none', color: 'var(--text-secondary)', fontWeight: 500, fontSize: '0.9rem' }}>Work</a>
-            <a href="#insights" style={{ textDecoration: 'none', color: 'var(--text-secondary)', fontWeight: 500, fontSize: '0.9rem' }}>Insights</a>
+          <div className="nav-links">
+            <a href="#services">Services</a>
+            <a href="#seo">SEO</a>
+            <a href="#portfolio">Work</a>
+            <a href="#insights">Insights</a>
           </div>
-          <a href="#contact" className="btn btn-primary" style={{ padding: '0.6rem 1.2rem', borderRadius: '8px', fontSize: '0.85rem' }}>Contact Us</a>
+          <a href="#contact" className="btn btn-primary nav-btn">Contact Us</a>
         </nav>
       </header>
 
