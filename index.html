@@ -21,14 +21,46 @@
     <!-- Performance: Resource Hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     
     <style>
-      /* Critical CSS for LCP */
-      body { background-color: #020617; }
-      .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+      /* CRITICAL CSS for LCP & FCP */
+      :root {
+        --bg-primary: #020617;
+        --text-primary: #f8fafc;
+        --accent: #38bdf8;
+        --accent-glow: rgba(56, 189, 248, 0.15);
+      }
+      body { 
+        background-color: var(--bg-primary); 
+        margin: 0; 
+        font-family: system-ui, -apple-system, sans-serif; 
+        color: var(--text-primary);
+      }
+      .navbar {
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2rem;
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+      .hero { 
+        min-height: 100vh; 
+        display: flex; 
+        flex-direction: column;
+        align-items: center; 
+        justify-content: center; 
+        text-align: center;
+        padding: 0 2rem;
+      }
+      .hero h1 { font-size: clamp(3.5rem, 10vw, 6rem); margin: 0 0 1.5rem; line-height: 1.1; }
+      .hero p { max-width: 600px; font-size: 1.25rem; opacity: 0.8; }
+      .reveal { opacity: 0; }
     </style>
+
+    <!-- Deferred Font Loading -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
   </head>
   <body>
     <div id="root"></div>
