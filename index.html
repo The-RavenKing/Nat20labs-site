@@ -4,71 +4,39 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nat 20 Labs | Expert Web Development & SEO Agency UK</title>
-    <meta name="description" content="Nat 20 Labs: UK-based freelance specialists in high-performance React development and strategic SEO management." />
+    <title>Nat 20 Labs | Modern Web Dev & SEO Agency UK</title>
+    <meta name="description" content="Nat 20 Labs: High-performance React development and strategic SEO management for UK businesses." />
     <link rel="canonical" href="https://nat20labs.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <style>
       :root {
-        --bg-primary: #020617; --bg-secondary: #0f172a; --bg-tertiary: #1e293b;
-        --text-primary: #f8fafc; --text-secondary: #cbd5e1; --text-muted: #94a3b8;
-        --accent: #38bdf8; --accent-secondary: #818cf8; --accent-glow: rgba(56, 189, 248, 0.2);
-        --border: rgba(255, 255, 255, 0.08); --transition-fast: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        --bg-primary: #ffffff;
+        --bg-secondary: #f8fafc;
+        --bg-tertiary: #f1f5f9;
+        --text-primary: #0f172a;
+        --text-secondary: #475569;
+        --accent: #2563eb;
+        --accent-hover: #1d4ed8;
+        --accent-soft: rgba(37, 99, 235, 0.05);
+        --border: rgba(15, 23, 42, 0.08);
+        --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       }
       * { margin: 0; padding: 0; box-sizing: border-box; }
-      body { background-color: var(--bg-primary); color: var(--text-primary); font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; text-rendering: optimizeSpeed; }
-      .container { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
-      .section { padding: 8rem 0; position: relative; content-visibility: auto; contain-intrinsic-size: 1px 500px; }
-      
-      /* Navbar - Sleeker Glass */
-      .navbar { position: fixed; top: 0; left: 0; right: 0; height: 80px; display: flex; align-items: center; justify-content: space-between; z-index: 1000; transition: var(--transition-fast); }
-      .navbar.scrolled { height: 64px; background: rgba(2, 6, 23, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
-      .logo { font-size: 1.25rem; font-weight: 900; letter-spacing: -0.05em; color: var(--text-primary); }
-      .logo span { color: var(--accent); text-shadow: 0 0 15px var(--accent-glow); }
-      .nav-links { display: flex; gap: 2.5rem; }
-      .nav-link { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); transition: var(--transition-fast); text-decoration: none; position: relative; }
-      .nav-link:hover { color: var(--accent); }
-      .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--accent); transition: width 0.3s; }
-      .nav-link:hover::after { width: 100%; }
-
-      /* Hero - Instant Paint H1, Animated Subtext */
-      .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding-top: 80px; background: radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.07) 0%, transparent 50%), radial-gradient(circle at 100% 100%, rgba(129, 140, 248, 0.07) 0%, transparent 50%); }
-      .hero-badge { background: var(--accent-glow); color: var(--accent); padding: 0.5rem 1.25rem; border-radius: 99px; font-size: 0.875rem; font-weight: 600; margin-bottom: 2rem; border: 1px solid rgba(56, 189, 248, 0.3); }
-      .hero-title { font-size: clamp(3rem, 10vw, 6rem); margin-bottom: 1.5rem; max-width: 900px; font-weight: 800; color: #fff; line-height: 1.05; }
-      .hero p { max-width: 600px; margin-bottom: 3.5rem; font-size: 1.25rem; color: var(--text-secondary); opacity: 0; animation: fadeInUp 0.8s 0.2s forwards; }
-
-      /* Cards & Grids - Restoring Depth */
-      .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; }
-      .glass { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); border: 1px solid var(--border); box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5); }
-      .service-card { padding: 3.5rem; border-radius: 20px; transition: var(--transition-fast); cursor: default; }
-      .service-card:hover { transform: translateY(-10px); background: rgba(30, 41, 59, 0.8); border-color: var(--accent); box-shadow: 0 20px 40px -15px rgba(56, 189, 248, 0.1); }
-      .service-icon { width: 56px; height: 56px; background: var(--accent-glow); border-radius: 14px; display: flex; align-items: center; justify-content: center; color: var(--accent); margin-bottom: 2rem; font-size: 1.5rem; }
-      
-      .btn { display: inline-flex; align-items: center; justify-content: center; padding: 1.1rem 2.5rem; border-radius: 10px; font-weight: 700; transition: var(--transition-fast); text-decoration: none; }
-      .btn-primary { background: var(--accent); color: var(--bg-primary); }
-      .btn-primary:hover { transform: scale(1.03); box-shadow: 0 0 25px var(--accent-glow); }
-
-      /* Animations - Optimized */
-      @keyframes fadeInUp { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
+      body { background-color: var(--bg-primary); color: var(--text-primary); font-family: 'Inter', system-ui, sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+      .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+      .navbar { position: fixed; top: 0; left: 0; right: 0; height: 72px; display: flex; align-items: center; justify-content: space-between; z-index: 1000; background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+      .hero { min-height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding-top: 72px; background: radial-gradient(circle at top right, #eff6ff 0%, transparent 40%), radial-gradient(circle at bottom left, #f5f3ff 0%, transparent 40%); }
+      .hero-title { font-size: clamp(3rem, 8vw, 5.5rem); font-weight: 900; letter-spacing: -0.04em; line-height: 1; margin-bottom: 1.5rem; color: var(--text-primary); }
+      .hero-title span { color: var(--accent); background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
       .reveal { opacity: 0; }
-      .reveal.active { animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
-
-      /* Markdown */
-      .markdown-content { font-size: 1.15rem; line-height: 1.8; color: var(--text-secondary); }
-      .markdown-content h2 { color: #fff; margin: 3rem 0 1.5rem; font-size: 2.25rem; }
-      .markdown-content p { margin-bottom: 1.5rem; }
-
-      @media (max-width: 768px) {
-        .nav-links { display: none; }
-        .hero-title { font-size: 3.4rem; letter-spacing: -0.02em; }
-        .section { padding: 5rem 0; }
-        .service-card { padding: 2.5rem; }
-      }
     </style>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap&font-display=swap" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap&font-display=swap" media="print" onload="this.media='all'">
   </head>
   <body>
     <div id="root"></div>
