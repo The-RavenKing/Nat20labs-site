@@ -1,6 +1,4 @@
 import { useState, useEffect, lazy, Suspense } from 'react'
-import './App.css'
-import './BlogStyles.css'
 import { siteContent } from './content'
 import { blogPosts } from './content/blog'
 import type { BlogPost } from './content/blog'
