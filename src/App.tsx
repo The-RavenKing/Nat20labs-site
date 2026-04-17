@@ -1,4 +1,5 @@
 import './App.css'
+import { siteContent } from './content'
 
 function App() {
   return (
@@ -18,9 +19,9 @@ function App() {
       <main>
         <section className="hero container">
           <div className="reveal">
-            <h1>Critical Success for Your Digital Presence</h1>
-            <p>We build high-performance websites and dominate search rankings. Precision engineering meets strategic SEO.</p>
-            <button className="btn btn-primary">Start Your Project</button>
+            <h1>{siteContent.hero.title}</h1>
+            <p>{siteContent.hero.subtitle}</p>
+            <button className="btn btn-primary">{siteContent.hero.cta}</button>
           </div>
         </section>
 
@@ -30,32 +31,26 @@ function App() {
             <p style={{ color: 'var(--text-secondary)' }}>Tailored solutions for modern businesses.</p>
           </div>
           <div className="grid">
-            <div className="card">
-              <h3>Web Development</h3>
-              <p style={{ color: 'var(--text-secondary)' }}>Custom-built, lightning-fast React applications optimized for conversion and scalability.</p>
-            </div>
-            <div className="card">
-              <h3>SEO Management</h3>
-              <p style={{ color: 'var(--text-secondary)' }}>Data-driven strategies to boost your visibility and drive organic growth that lasts.</p>
-            </div>
-            <div className="card">
-              <h3>Technical Audit</h3>
-              <p style={{ color: 'var(--text-secondary)' }}>Deep dives into your current infrastructure to identify bottlenecks and growth opportunities.</p>
-            </div>
+            {siteContent.services.map((service, index) => (
+              <div className="card" key={index}>
+                <h3>{service.title}</h3>
+                <p style={{ color: 'var(--text-secondary)' }}>{service.description}</p>
+              </div>
+            ))}
           </div>
         </section>
 
         <section id="seo" className="container">
           <div className="seo-highlight reveal">
             <div style={{ flex: 1 }}>
-              <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem' }}>SEO is more than just keywords.</h2>
+              <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem' }}>{siteContent.seoSection.title}</h2>
               <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>
-                At Nat 20 Labs, we treat SEO as an engineering problem. We optimize site architecture, performance, and semantic structure to ensure search engines love your site as much as your users do.
+                {siteContent.seoSection.description}
               </p>
               <ul style={{ listStyle: 'none', color: 'var(--accent)' }}>
-                <li>✓ Core Web Vitals Optimization</li>
-                <li>✓ Semantic HTML & Schema Markup</li>
-                <li>✓ Strategic Content Roadmap</li>
+                {siteContent.seoSection.highlights.map((item, index) => (
+                  <li key={index}>✓ {item}</li>
+                ))}
               </ul>
             </div>
             <div style={{ flex: 1, textAlign: 'center' }}>
@@ -77,27 +72,15 @@ function App() {
             <p style={{ color: 'var(--text-secondary)' }}>A glimpse into our recent successful rolls.</p>
           </div>
           <div className="grid">
-            <div className="card">
-              <div style={{ height: '200px', background: 'var(--bg-primary)', borderRadius: '0.5rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 600, color: 'var(--text-secondary)' }}>
-                E-Commerce Titan
+            {siteContent.portfolio.map((project) => (
+              <div className="card" key={project.id}>
+                <div style={{ height: '200px', background: 'var(--bg-primary)', borderRadius: '0.5rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 600, color: 'var(--text-secondary)' }}>
+                  {project.imageLabel}
+                </div>
+                <h3>{project.title}</h3>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>{project.description}</p>
               </div>
-              <h3>Nexus Shop</h3>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>High-conversion storefront with 99+ PageSpeed score and integrated SEO strategy.</p>
-            </div>
-            <div className="card">
-              <div style={{ height: '200px', background: 'var(--bg-primary)', borderRadius: '0.5rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 600, color: 'var(--text-secondary)' }}>
-                SaaS Dashboard
-              </div>
-              <h3>DataStream AI</h3>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Real-time analytics platform built for scale and technical excellence.</p>
-            </div>
-            <div className="card">
-              <div style={{ height: '200px', background: 'var(--bg-primary)', borderRadius: '0.5rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 600, color: 'var(--text-secondary)' }}>
-                SEO Case Study
-              </div>
-              <h3>Growth Engine</h3>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Increased organic traffic by 400% through technical SEO and content architecture.</p>
-            </div>
+            ))}
           </div>
         </section>
 
