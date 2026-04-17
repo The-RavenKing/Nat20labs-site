@@ -39,7 +39,7 @@ function App() {
         <nav className={`navbar container ${scrolled ? 'navbar-scrolled' : ''}`}>
           <a href="/" className="logo" style={{ display: 'flex', alignItems: 'center' }}>
             <img 
-              src="/n20l_logo.png" 
+              src="/n20l_logo_optimized.png" 
               alt="Nat 20 Labs" 
               width="48" 
               height="48" 
@@ -191,7 +191,7 @@ function App() {
       <footer>
         <div className="container">
           <div style={{ marginBottom: '2rem' }}>
-            <img src="/n20l_logo.png" alt="Nat 20 Labs" width="64" height="64" style={{ objectFit: 'contain' }} />
+            <img src="/n20l_logo_optimized.png" alt="Nat 20 Labs" width="64" height="64" style={{ objectFit: 'contain' }} />
           </div>
           <p style={{ fontSize: '0.9rem' }}>&copy; {new Date().getFullYear()} Nat 20 Labs. All rights reserved.</p>
         </div>
