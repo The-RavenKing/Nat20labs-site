@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nat20labs.com/sitemap.xml

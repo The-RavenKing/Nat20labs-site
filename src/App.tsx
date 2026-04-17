@@ -15,17 +15,57 @@ function App() {
 
   return (
     <div className="app">
-      <nav className={`navbar container ${scrolled ? 'scrolled' : ''}`}>
-        <div className="logo">
-          NAT 20 <span>LABS</span>
-        </div>
-        <div className="nav-links">
-          <a href="#services" className="nav-link">Services</a>
-          <a href="#seo" className="nav-link">SEO</a>
-          <a href="#portfolio" className="nav-link">Work</a>
-          <a href="#contact" className="nav-link">Contact</a>
-        </div>
-      </nav>
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          "name": "Nat 20 Labs",
+          "image": "https://nat20labs.com/logo.png",
+          "@id": "https://nat20labs.com",
+          "url": "https://nat20labs.com",
+          "telephone": "",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "",
+            "addressLocality": "London",
+            "addressRegion": "Greater London",
+            "postalCode": "",
+            "addressCountry": "GB"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 51.5074,
+            "longitude": -0.1278
+          },
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday"
+            ],
+            "opens": "09:00",
+            "closes": "18:00"
+          },
+          "sameAs": []
+        })}
+      </script>
+
+      <header>
+        <nav className={`navbar container ${scrolled ? 'scrolled' : ''}`}>
+          <div className="logo">
+            NAT 20 <span>LABS</span>
+          </div>
+          <div className="nav-links">
+            <a href="#services" className="nav-link">Services</a>
+            <a href="#seo" className="nav-link">SEO</a>
+            <a href="#portfolio" className="nav-link">Work</a>
+            <a href="#contact" className="nav-link">Contact</a>
+          </div>
+        </nav>
+      </header>
 
       <main>
         <section className="hero container">
