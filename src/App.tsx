@@ -37,7 +37,8 @@ function App() {
     <div className="app">
       <header>
         <nav className={`navbar container ${scrolled ? 'navbar-scrolled' : ''}`}>
-          <div className="logo">
+          <div className="logo" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            <img src="/n20l_logo.png" alt="" width="32" height="32" style={{ objectFit: 'contain' }} />
             NAT 20 <span>LABS</span>
           </div>
           <div className="nav-links">
