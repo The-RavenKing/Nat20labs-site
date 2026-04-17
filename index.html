@@ -4,63 +4,33 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- Primary SEO -->
     <title>Nat 20 Labs | Expert Web Development & SEO Agency UK</title>
-    <meta name="description" content="Nat 20 Labs: UK-based freelance specialists in high-performance React development and strategic SEO management. Boost your digital presence with a critical success." />
-    <meta name="keywords" content="web development UK, SEO management London, freelance web designer UK, React developer, technical SEO audit" />
+    <meta name="description" content="Nat 20 Labs: UK-based freelance specialists in high-performance React development and strategic SEO management." />
     <link rel="canonical" href="https://nat20labs.com" />
-
-    <!-- Open Graph / Social -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Nat 20 Labs | Expert Web Development & SEO UK" />
-    <meta property="og:description" content="High-performance websites and strategic SEO for UK businesses. Precision engineering meets growth." />
-    <meta property="og:url" content="https://nat20labs.com" />
-    <meta property="og:site_name" content="Nat 20 Labs" />
-
-    <!-- Performance: Resource Hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
+
     <style>
-      /* CRITICAL CSS for LCP & FCP */
       :root {
-        --bg-primary: #020617;
-        --text-primary: #f8fafc;
-        --accent: #38bdf8;
-        --accent-glow: rgba(56, 189, 248, 0.15);
+        --bg-primary: #020617; --bg-secondary: #0f172a; --text-primary: #f8fafc;
+        --text-secondary: #94a3b8; --accent: #38bdf8; --accent-glow: rgba(56, 189, 248, 0.15);
+        --border: rgba(255, 255, 255, 0.08); --transition-fast: 0.2s ease;
       }
-      body { 
-        background-color: var(--bg-primary); 
-        margin: 0; 
-        font-family: system-ui, -apple-system, sans-serif; 
-        color: var(--text-primary);
-      }
-      .navbar {
-        height: 80px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 2rem;
-        max-width: 1280px;
-        margin: 0 auto;
-      }
-      .hero { 
-        min-height: 100vh; 
-        display: flex; 
-        flex-direction: column;
-        align-items: center; 
-        justify-content: center; 
-        text-align: center;
-        padding: 0 2rem;
-      }
-      .hero h1 { font-size: clamp(3.5rem, 10vw, 6rem); margin: 0 0 1.5rem; line-height: 1.1; }
-      .hero-title { font-size: clamp(3.5rem, 10vw, 6rem); margin: 0 0 1.5rem; line-height: 1.1; }
-      .hero p { max-width: 600px; font-size: 1.25rem; opacity: 0.8; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { background-color: var(--bg-primary); color: var(--text-primary); font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+      .container { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
+      .navbar { position: fixed; top: 0; left: 0; right: 0; height: 80px; display: flex; align-items: center; justify-content: space-between; z-index: 1000; }
+      .logo { font-size: 1.25rem; font-weight: 900; color: var(--text-primary); }
+      .logo span { color: var(--accent); }
+      .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+      .hero-title { font-size: clamp(3rem, 10vw, 6rem); margin-bottom: 1.5rem; max-width: 900px; color: var(--text-primary); font-weight: 800; opacity: 1 !important; transform: none !important; }
+      .hero p { max-width: 600px; margin-bottom: 3rem; font-size: 1.25rem; color: var(--text-secondary); }
+      .btn { display: inline-flex; align-items: center; justify-content: center; padding: 1rem 2rem; border-radius: 8px; font-weight: 600; text-decoration: none; }
+      .btn-primary { background: var(--accent); color: var(--bg-primary); }
       .reveal { opacity: 0; }
+      @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 
-    <!-- Deferred Font Loading with swap -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap&font-display=swap" media="print" onload="this.media='all'">
   </head>
   <body>
