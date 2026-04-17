@@ -154,9 +154,10 @@ function App() {
               <div className="glass" style={{ padding: '6rem 2rem', borderRadius: '32px' }}>
                 <h2 style={{ fontSize: '3.5rem', marginBottom: '1.5rem' }}>Ready to level up?</h2>
                 <p style={{ maxWidth: '600px', margin: '0 auto 3rem' }}>Let's discuss how we can grow your business together through technical excellence and strategic SEO.</p>
-                <a href="mailto:hello@nat20labs.com" className="btn btn-primary">Get in Touch</a>
+                <a href="mailto:karl@nat20labs.com" className="btn btn-primary">Get in Touch</a>
               </div>
             </section>
+
           </>
         ) : (
           <article className="container section reveal" style={{ maxWidth: '800px', textAlign: 'left' }}>
