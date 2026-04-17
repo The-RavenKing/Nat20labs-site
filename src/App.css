@@ -1,60 +1,99 @@
-/* App.css */
+/* Navbar */
 .navbar {
-  height: var(--nav-height);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(15, 23, 42, 0.8);
-  backdrop-filter: blur(10px);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  z-index: 1000;
+  transition: var(--transition-fast);
+}
+
+.navbar.scrolled {
+  height: 64px;
+  background: rgba(2, 6, 23, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  color: var(--text-primary);
+}
+
+.logo span {
+  color: var(--accent);
 }
 
 .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .nav-link {
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--text-secondary);
-  transition: color 0.3s;
+  transition: var(--transition-fast);
+  position: relative;
 }
 
 .nav-link:hover {
   color: var(--accent);
 }
 
+/* Hero Section */
 .hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 10rem 0;
-  background: radial-gradient(circle at center, var(--accent-glow) 0%, transparent 70%);
+  padding-top: 80px;
+  background: 
+    radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 100% 100%, rgba(129, 140, 248, 0.05) 0%, transparent 50%);
+}
+
+.hero-badge {
+  background: var(--accent-glow);
+  color: var(--accent);
+  padding: 0.5rem 1rem;
+  border-radius: 99px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  border: 1px solid var(--accent);
 }
 
 .hero h1 {
-  font-size: clamp(3rem, 8vw, 5rem);
-  font-weight: 800;
+  font-size: clamp(3.5rem, 10vw, 6rem);
   margin-bottom: 1.5rem;
-  background: linear-gradient(to right, #fff, var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  max-width: 900px;
 }
 
 .hero p {
-  font-size: 1.25rem;
-  color: var(--text-secondary);
   max-width: 600px;
-  margin: 0 auto 2rem;
+  margin-bottom: 3rem;
+  font-size: 1.25rem;
 }
 
+/* Buttons */
 .btn {
-  padding: 1rem 2.5rem;
-  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  border-radius: 8px;
   font-weight: 600;
-  transition: all 0.3s;
+  transition: var(--transition-fast);
+  gap: 0.5rem;
 }
 
 .btn-primary {
@@ -63,77 +102,126 @@
 }
 
 .btn-primary:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px var(--accent-glow);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px var(--accent-glow);
 }
 
-.grid {
+/* Services Grid */
+.section-header {
+  margin-bottom: 5rem;
+}
+
+.section-tag {
+  color: var(--accent);
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
-.card {
-  background: var(--bg-secondary);
-  padding: 2.5rem;
-  border-radius: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: transform 0.3s, border-color 0.3s;
+.service-card {
+  padding: 3rem;
+  border-radius: 16px;
+  transition: var(--transition-slow);
 }
 
-.card:hover {
-  transform: translateY(-5px);
+.service-card:hover {
+  background: var(--bg-secondary);
+  transform: translateY(-8px);
   border-color: var(--accent);
 }
 
-.card h3 {
-  margin-bottom: 1rem;
+.service-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--accent-glow);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--accent);
+  margin-bottom: 2rem;
 }
 
-.section-title {
-  text-align: center;
+/* Portfolio */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.project-card {
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+}
+
+.project-image {
+  aspect-ratio: 16/10;
+  background: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-slow);
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.02);
+}
+
+.project-info {
+  padding: 2rem 0;
+}
+
+/* SEO Highlight */
+.seo-feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.seo-stat {
+  font-size: 12rem;
+  font-weight: 900;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--accent);
+  opacity: 0.2;
+}
+
+/* Footer */
+footer {
+  padding: 6rem 0 3rem;
+  border-top: 1px solid var(--border);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 4rem;
 }
 
-.section-title h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.seo-highlight {
-  background: var(--bg-secondary);
-  border-radius: 2rem;
-  padding: 4rem;
-  display: flex;
-  align-items: center;
-  gap: 4rem;
-  margin-top: 4rem;
+/* Responsive */
+@media (max-width: 1024px) {
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .seo-feature { grid-template-columns: 1fr; gap: 4rem; text-align: center; }
+  .seo-stat { font-size: 8rem; }
 }
 
 @media (max-width: 768px) {
-  .nav-links {
-    display: none; /* In a real app, I'd add a hamburger menu */
-  }
-  
-  .hero {
-    padding: 6rem 0;
-  }
-  
-  section {
-    padding: 4rem 0;
-  }
-
-  .seo-highlight {
-    flex-direction: column;
-    padding: 2rem;
-    text-align: center;
-  }
-}
-
-footer {
-  padding: 4rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  text-align: center;
-  color: var(--text-secondary);
+  .nav-links { display: none; }
+  .services-grid { grid-template-columns: 1fr; }
+  .portfolio-grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 3.5rem; }
+  .section { padding: 5rem 0; }
 }
