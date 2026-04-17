@@ -2,7 +2,6 @@ import { useState, useEffect, lazy, Suspense } from 'react'
 import { siteContent } from './content'
 import { blogPosts } from './content/blog'
 import type { BlogPost } from './content/blog'
-import './App.css'
 
 // Lazy load the markdown component
 const ReactMarkdown = lazy(() => import('react-markdown'));
@@ -39,7 +38,7 @@ function App() {
         <nav className={`navbar container ${scrolled ? 'navbar-scrolled' : ''}`}>
           <a href="/" className="logo" style={{ display: 'flex', alignItems: 'center' }}>
             <img 
-              src="/n20l_logo_optimized.png" 
+              src="/logo.webp" 
               alt="Nat 20 Labs" 
               width="48" 
               height="48" 
@@ -144,7 +143,7 @@ function App() {
                   <div className="bento-card reveal" key={post.id} style={{ cursor: 'pointer' }} onClick={() => setSelectedPost(post)}>
                     <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--accent)', textTransform: 'uppercase' }}>{post.category}</span>
                     <h3 style={{ margin: '1rem 0' }}>{post.title}</h3>
-                    <p style={{ fontSize: '0.9rem', marginBottom: '2rem' }}>{post.excerpt}</p>
+                    <p style={{ fontSize: '0.95rem', marginBottom: '2rem' }}>{post.excerpt}</p>
                     <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
                       <span>By {post.author}</span>
                       <span>{post.date}</span>
@@ -157,7 +156,7 @@ function App() {
             <section id="contact" className="section container" style={{ textAlign: 'center' }}>
               <div style={{ background: 'var(--bg-secondary)', padding: '6rem 2rem', borderRadius: '40px', border: '1px solid var(--border)' }} className="reveal">
                 <h2>Ready for a Critical Success?</h2>
-                <p style={{ maxWidth: '600px', margin: '0 auto 3rem' }}>Let's discuss how we can grow your business through technical excellence and strategic SEO.</p>
+                <p style={{ maxWidth: '600px', margin: '0 auto 3rem' }}>Let's discuss how we can grow your business together through technical excellence and strategic SEO.</p>
                 <a href="mailto:karl@nat20labs.com" className="btn btn-primary">Start Your Project</a>
               </div>
             </section>
@@ -191,7 +190,7 @@ function App() {
       <footer>
         <div className="container">
           <div style={{ marginBottom: '2rem' }}>
-            <img src="/n20l_logo_optimized.png" alt="Nat 20 Labs" width="64" height="64" style={{ objectFit: 'contain' }} />
+            <img src="/logo.webp" alt="Nat 20 Labs" width="64" height="64" style={{ objectFit: 'contain' }} />
           </div>
           <p style={{ fontSize: '0.9rem' }}>&copy; {new Date().getFullYear()} Nat 20 Labs. All rights reserved.</p>
         </div>
