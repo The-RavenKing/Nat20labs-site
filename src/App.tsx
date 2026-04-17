@@ -1,10 +1,12 @@
-import { useState, useEffect } from 'react'
-import ReactMarkdown from 'react-markdown'
+import { useState, useEffect, lazy, Suspense } from 'react'
 import './App.css'
 import './BlogStyles.css'
 import { siteContent } from './content'
 import { blogPosts } from './content/blog'
 import type { BlogPost } from './content/blog'
+
+// Lazy load the markdown component to reduce initial bundle size
+const ReactMarkdown = lazy(() => import('react-markdown'));
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -62,7 +64,7 @@ function App() {
           <>
             <section className="hero container">
               <div className="hero-badge reveal">Freelance Web Dev & SEO</div>
-              <h1 className="reveal reveal-delay-1">{siteContent.hero.title}</h1>
+              <h1 className="hero-title">{siteContent.hero.title}</h1>
               <p className="reveal reveal-delay-2">{siteContent.hero.subtitle}</p>
               <div className="reveal reveal-delay-2">
                 <button className="btn btn-primary">{siteContent.hero.cta}</button>
@@ -157,7 +159,6 @@ function App() {
                 <a href="mailto:karl@nat20labs.com" className="btn btn-primary">Get in Touch</a>
               </div>
             </section>
-
           </>
         ) : (
           <article className="container section reveal" style={{ maxWidth: '800px', textAlign: 'left' }}>
@@ -176,7 +177,9 @@ function App() {
               <span>{selectedPost.readTime}</span>
             </div>
             <div className="markdown-content">
-              <ReactMarkdown>{selectedPost.content}</ReactMarkdown>
+              <Suspense fallback={<div style={{ padding: '2rem', textAlign: 'center' }}>Loading Insight...</div>}>
+                <ReactMarkdown>{selectedPost.content}</ReactMarkdown>
+              </Suspense>
             </div>
             <div style={{ marginTop: '4rem', padding: '2rem', borderTop: '1px solid var(--border)' }}>
               <p>Liked this article? Let's discuss how these strategies apply to your business.</p>

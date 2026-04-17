@@ -55,12 +55,13 @@
         padding: 0 2rem;
       }
       .hero h1 { font-size: clamp(3.5rem, 10vw, 6rem); margin: 0 0 1.5rem; line-height: 1.1; }
+      .hero-title { font-size: clamp(3.5rem, 10vw, 6rem); margin: 0 0 1.5rem; line-height: 1.1; }
       .hero p { max-width: 600px; font-size: 1.25rem; opacity: 0.8; }
       .reveal { opacity: 0; }
     </style>
 
-    <!-- Deferred Font Loading -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+    <!-- Deferred Font Loading with swap -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap&font-display=swap" media="print" onload="this.media='all'">
   </head>
   <body>
     <div id="root"></div>
