@@ -36,13 +36,11 @@ function App() {
     <div className="app">
       <header>
         <nav className={`navbar container ${scrolled ? 'navbar-scrolled' : ''}`}>
-          <a href="/" className="logo" style={{ display: 'flex', alignItems: 'center' }}>
+          <a href="/" className="logo" style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>
             <img 
               src="/logo-v2.webp" 
               alt="Nat 20 Labs" 
-              width="200" 
-              height="200" 
-              style={{ objectFit: 'contain', display: 'block' }} 
+              style={{ height: scrolled ? '60px' : '200px', width: 'auto', display: 'block', flexShrink: 0, transition: 'height 0.3s ease' }} 
             />
           </a>
           <div className="nav-links">
@@ -190,7 +188,7 @@ function App() {
       <footer>
         <div className="container">
           <div style={{ marginBottom: '2rem' }}>
-            <img src="/logo-v2.webp" alt="Nat 20 Labs" width="200" height="200" style={{ objectFit: 'contain', margin: '0 auto' }} />
+            <img src="/logo-v2.webp" alt="Nat 20 Labs" style={{ height: '200px', width: 'auto', margin: '0 auto' }} />
           </div>
           <p style={{ fontSize: '0.9rem' }}>&copy; {new Date().getFullYear()} Nat 20 Labs. All rights reserved.</p>
         </div>
