@@ -207,10 +207,11 @@ function App() {
         <div className="container">
           <div style={{ marginBottom: '2rem' }}>
             <img 
-              src="/logo-v2.webp" 
+              src="/logo-v2-new.webp" 
               alt="Nat 20 Labs" 
-              width="800"
-              height="200"
+              width="179"
+              height="148"
+              loading="lazy"
               style={{ height: '200px', width: 'auto', margin: '0 auto' }} 
             />
           </div>
@@ -218,6 +219,12 @@ function App() {
         </div>
       </footer>
     </div>
+  )
+}
+
+export default App
+
+  </div>
   )
 }
 
