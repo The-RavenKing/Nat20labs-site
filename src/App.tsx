@@ -40,15 +40,7 @@ function App() {
     <div className="app">
       <header>
         <nav className={`navbar container ${scrolled ? 'navbar-scrolled' : ''}`}>
-          <a href="/" className="logo" style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>
-            <img 
-              src="/logo-v2.webp" 
-              alt="Nat 20 Labs" 
-              style={{ height: scrolled ? '60px' : '200px', width: 'auto', display: 'block', flexShrink: 0, transition: 'height 0.3s ease' }} 
-            />
-          </a>
-
-          {/* Hamburger Menu Button */}
+          {/* Hamburger Menu Button (Now on Left) */}
           <button 
             className={`menu-btn ${isMenuOpen ? 'open' : ''}`} 
             onClick={toggleMenu}
@@ -57,10 +49,24 @@ function App() {
             <div className="menu-icon-bar"></div>
             <div className="menu-icon-bar"></div>
           </button>
+
+          <a href="/" className="logo" style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>
+            <img 
+              src="/logo-v2.webp" 
+              alt="Nat 20 Labs" 
+              style={{ height: scrolled ? '60px' : '200px', width: 'auto', display: 'block', flexShrink: 0, transition: 'height 0.3s ease' }} 
+            />
+          </a>
+          
+          {/* Placeholder to keep logo centered if needed, or just let it stay right-aligned */}
+          <div style={{ width: '40px' }}></div>
         </nav>
 
         {/* Fullscreen Popout Nav */}
-        <div className={`nav-overlay ${isMenuOpen ? 'open' : ''}`}>
+        <div 
+          className={`nav-overlay ${isMenuOpen ? 'open' : ''}`}
+          onClick={(e) => e.target === e.currentTarget && closeMenu()}
+        >
           <div className="nav-overlay-content container">
             <div className="nav-overlay-links">
               <a href="#services" onClick={closeMenu}>Services</a>
