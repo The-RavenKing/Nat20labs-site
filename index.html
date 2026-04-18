@@ -28,7 +28,7 @@
       .section { padding: 8rem 0; position: relative; content-visibility: auto; contain-intrinsic-size: 1px 500px; }
       
       /* Navbar & Logo */
-      .navbar { position: relative !important; height: 200px !important; display: flex !important; align-items: center !important; justify-content: center !important; background: transparent !important; border: none !important; backdrop-filter: none !important; box-shadow: none !important; z-index: 1100; margin-bottom: 2rem; }
+      .navbar { position: relative !important; height: 200px !important; display: flex !important; align-items: center !important; justify-content: center !important; background: transparent !important; border: none !important; backdrop-filter: none !important; box-shadow: none !important; z-index: 1100; margin-bottom: 0 !important; }
       .navbar .logo { display: flex; align-items: center; font-size: 1.25rem; font-weight: 900; }
       
       /* Hamburger Menu Button */
@@ -45,7 +45,7 @@
       .nav-overlay-links a { text-decoration: none; color: var(--text-primary); font-size: 2rem; font-weight: 900; letter-spacing: -0.04em; transition: var(--transition); }
       .nav-overlay-links a:hover { color: var(--accent); transform: scale(1.05); }
 
-      .hero { min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 2rem; background: radial-gradient(circle at top right, #eff6ff 0%, transparent 40%), radial-gradient(circle at bottom left, #f5f3ff 0%, transparent 40%); }
+      .hero { min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0.5rem 2rem; background: radial-gradient(circle at top right, #eff6ff 0%, transparent 40%), radial-gradient(circle at bottom left, #f5f3ff 0%, transparent 40%); }
       .hero-title { font-size: clamp(3rem, 8vw, 5.5rem); font-weight: 900; letter-spacing: -0.04em; line-height: 1; margin-bottom: 1.5rem; color: var(--text-primary); }
       .hero-title span { color: var(--accent); background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
       
@@ -72,7 +72,7 @@
       footer { padding: 6rem 0; border-top: 1px solid var(--border); text-align: center; }
 
       @media (max-width: 768px) {
-        .navbar { height: 120px !important; }
+        .navbar { height: 160px !important; }
         .menu-btn { top: 20px !important; left: 1rem !important; }
         .hero-title { font-size: 3.2rem; }
         .section { padding: 5rem 0; }
