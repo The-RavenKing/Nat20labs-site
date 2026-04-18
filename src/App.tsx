@@ -51,7 +51,7 @@ function App() {
               height="148"
               fetchPriority="high"
               loading="eager"
-              style={{ height: '200px', width: 'auto', display: 'block', flexShrink: 0 }} 
+              style={{ height: '175px', width: 'auto', display: 'block', flexShrink: 0 }} 
             />
           </a>
         </nav>
