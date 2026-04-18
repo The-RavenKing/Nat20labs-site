@@ -38,7 +38,7 @@ function App() {
         <nav className={`navbar container ${scrolled ? 'navbar-scrolled' : ''}`}>
           <a href="/" className="logo" style={{ display: 'flex', alignItems: 'center' }}>
             <img 
-              src="/logo.webp" 
+              src="/logo-v2.webp" 
               alt="Nat 20 Labs" 
               width="200" 
               height="200" 
@@ -190,7 +190,7 @@ function App() {
       <footer>
         <div className="container">
           <div style={{ marginBottom: '2rem' }}>
-            <img src="/logo.webp" alt="Nat 20 Labs" width="200" height="200" style={{ objectFit: 'contain', margin: '0 auto' }} />
+            <img src="/logo-v2.webp" alt="Nat 20 Labs" width="200" height="200" style={{ objectFit: 'contain', margin: '0 auto' }} />
           </div>
           <p style={{ fontSize: '0.9rem' }}>&copy; {new Date().getFullYear()} Nat 20 Labs. All rights reserved.</p>
         </div>
