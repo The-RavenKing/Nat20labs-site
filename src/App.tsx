@@ -45,10 +45,12 @@ function App() {
 
           <a href="/" className="logo" style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>
             <img 
-              src="/logo-v2.webp" 
+              src="/logo-v2-new.webp" 
               alt="Nat 20 Labs" 
-              width="800"
-              height="200"
+              width="179"
+              height="148"
+              fetchPriority="high"
+              loading="eager"
               style={{ height: '200px', width: 'auto', display: 'block', flexShrink: 0 }} 
             />
           </a>
@@ -223,4 +225,3 @@ function App() {
 }
 
 export default App
-
