@@ -8,6 +8,7 @@ const ReactMarkdown = lazy(() => import('react-markdown'));
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
 
   useEffect(() => {
@@ -32,6 +33,9 @@ function App() {
     };
   }, [selectedPost]);
 
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
+
   return (
     <div className="app">
       <header>
@@ -43,14 +47,30 @@ function App() {
               style={{ height: scrolled ? '60px' : '200px', width: 'auto', display: 'block', flexShrink: 0, transition: 'height 0.3s ease' }} 
             />
           </a>
-          <div className="nav-links">
-            <a href="#services">Services</a>
-            <a href="#seo">SEO</a>
-            <a href="#portfolio">Work</a>
-            <a href="#insights">Insights</a>
-          </div>
-          <a href="#contact" className="btn btn-primary nav-btn">Contact Us</a>
+
+          {/* Hamburger Menu Button */}
+          <button 
+            className={`menu-btn ${isMenuOpen ? 'open' : ''}`} 
+            onClick={toggleMenu}
+            aria-label="Toggle Menu"
+          >
+            <div className="menu-icon-bar"></div>
+            <div className="menu-icon-bar"></div>
+          </button>
         </nav>
+
+        {/* Fullscreen Popout Nav */}
+        <div className={`nav-overlay ${isMenuOpen ? 'open' : ''}`}>
+          <div className="nav-overlay-content container">
+            <div className="nav-overlay-links">
+              <a href="#services" onClick={closeMenu}>Services</a>
+              <a href="#seo" onClick={closeMenu}>SEO</a>
+              <a href="#portfolio" onClick={closeMenu}>Work</a>
+              <a href="#insights" onClick={closeMenu}>Insights</a>
+              <a href="#contact" className="btn btn-primary" onClick={closeMenu} style={{ marginTop: '2rem' }}>Start a Project</a>
+            </div>
+          </div>
+        </div>
       </header>
 
       <main>
