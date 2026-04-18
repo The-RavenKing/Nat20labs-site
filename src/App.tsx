@@ -49,7 +49,7 @@ function App() {
               alt="Nat 20 Labs" 
               width="800"
               height="200"
-              style={{ height: '200px', width: 'auto', display: 'block', flexShrink: 0 }} 
+              style={{ height: '160px', width: 'auto', display: 'block', flexShrink: 0 }} 
             />
           </a>
         </nav>
