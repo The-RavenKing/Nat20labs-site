@@ -39,7 +39,7 @@ function App() {
   return (
     <div className="app">
       <header>
-        <nav className={`navbar container ${scrolled ? 'navbar-scrolled' : ''}`}>
+        <nav className={`navbar container ${scrolled ? 'navbar-scrolled' : ''} ${isMenuOpen ? 'menu-open' : ''}`}>
           {/* Hamburger Menu Button (Now on Left) */}
           <button 
             className={`menu-btn ${isMenuOpen ? 'open' : ''}`} 

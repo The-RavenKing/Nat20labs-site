@@ -24,8 +24,9 @@
       .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
       
       /* Navbar - Menu on Left */
-      .navbar { position: fixed; top: 0; left: 0; right: 0; height: 260px; display: flex; align-items: center; justify-content: space-between; z-index: 1200; background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); transition: var(--transition); }
+      .navbar { position: fixed; top: 0; left: 0; right: 0; height: 260px; display: flex; align-items: center; justify-content: space-between; z-index: 1400; background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); transition: var(--transition); }
       .navbar-scrolled { height: 80px; }
+      .navbar.menu-open { background: transparent; backdrop-filter: none; border-bottom: none; }
       .navbar .logo { display: flex; align-items: center; margin-right: 40px; }
       
       /* Hamburger Menu Button */
