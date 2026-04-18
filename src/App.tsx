@@ -2,21 +2,17 @@ import { useState, useEffect, lazy, Suspense } from 'react'
 import { siteContent } from './content'
 import { blogPosts } from './content/blog'
 import type { BlogPost } from './content/blog'
+import './index.css'
+import './App.css'
 
 // Lazy load the markdown component
 const ReactMarkdown = lazy(() => import('react-markdown'));
 
 function App() {
-  const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -28,7 +24,6 @@ function App() {
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
       observer.disconnect();
     };
   }, [selectedPost]);
@@ -39,7 +34,7 @@ function App() {
   return (
     <div className="app">
       <header>
-        <nav className={`navbar container ${scrolled ? 'navbar-scrolled' : ''} ${isMenuOpen ? 'menu-open' : ''}`}>
+        <nav className="navbar container">
           {/* Hamburger Menu Button (Now on Left) */}
           <button 
             className={`menu-btn ${isMenuOpen ? 'open' : ''}`} 
@@ -54,12 +49,9 @@ function App() {
             <img 
               src="/logo-v2.webp" 
               alt="Nat 20 Labs" 
-              style={{ height: scrolled ? '60px' : '200px', width: 'auto', display: 'block', flexShrink: 0, transition: 'height 0.3s ease' }} 
+              style={{ height: '200px', width: 'auto', display: 'block', flexShrink: 0 }} 
             />
           </a>
-          
-          {/* Placeholder to keep logo centered if needed, or just let it stay right-aligned */}
-          <div style={{ width: '40px' }}></div>
         </nav>
 
         {/* Fullscreen Popout Nav */}

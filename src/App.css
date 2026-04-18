@@ -129,6 +129,20 @@ footer {
 .markdown-content p { margin-bottom: 1.5rem; }
 
 /* Navbar Enhancements */
+.navbar {
+  position: relative !important;
+  height: 200px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: transparent !important;
+  border: none !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+  z-index: 1100;
+  margin-bottom: 2rem;
+}
+
 .navbar .logo {
   font-size: 1.25rem;
   font-weight: 900;
