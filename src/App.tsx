@@ -49,8 +49,6 @@ function App() {
               alt="Nat 20 Labs" 
               width="800"
               height="200"
-              fetchPriority="high"
-              loading="eager"
               style={{ height: '200px', width: 'auto', display: 'block', flexShrink: 0 }} 
             />
           </a>
