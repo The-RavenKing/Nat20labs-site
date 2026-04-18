@@ -124,7 +124,7 @@ function App() {
                   <h2>SEO as an Engineering Problem</h2>
                   <p>Most agencies treat SEO as a content game. We treat it as a performance game. By optimizing your site architecture and semantic structure, we ensure search engines prioritize you.</p>
                 </div>
-                <div style={{ fontSize: '10rem', fontWeight: 900, textAlign: 'center', opacity: 0.2 }}>
+                <div style={{ fontSize: '10rem', fontWeight: 900, textAlign: 'center', opacity: 0.45 }}>
                   20
                 </div>
               </div>
