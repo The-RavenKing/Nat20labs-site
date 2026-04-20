@@ -121,14 +121,14 @@ function App() {
         {!selectedPost ? (
           <>
             <section className="hero container">
-              <span className="section-tag" style={{ animation: 'fadeInUp 0.8s forwards' }}>Freelance Web Dev & SEO</span>
+              <span className="section-tag">Freelance Web Dev & SEO</span>
               <h1 className="hero-title">
                 Rolling Criticals for <span>Your Business</span>
               </h1>
-              <p style={{ animation: 'fadeInUp 0.8s 0.2s forwards', opacity: 0 }}>
+              <p>
                 High-performance web applications and strategic SEO management. We turn technical complexity into business growth.
               </p>
-              <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem', animation: 'fadeInUp 0.8s 0.3s forwards', opacity: 0 }}>
+              <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem' }}>
                 <a href="#contact" className="btn btn-primary">Start a Project</a>
                 <a href="#portfolio" className="btn btn-outline">View Our Work</a>
               </div>
