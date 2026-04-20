@@ -11,6 +11,50 @@ function App() {
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
 
   useEffect(() => {
+    if (selectedPost) {
+      document.title = `${selectedPost.title} | Nat 20 Labs Insights`;
+      const metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) {
+        metaDescription.setAttribute('content', selectedPost.excerpt);
+      }
+      
+      // Add BlogPosting Schema
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.id = 'blog-schema';
+      script.text = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": selectedPost.title,
+        "description": selectedPost.excerpt,
+        "author": {
+          "@type": "Person",
+          "name": selectedPost.author
+        },
+        "datePublished": selectedPost.date,
+        "image": "https://nat20labs.com/logo-v2-new.webp",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Nat 20 Labs",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://nat20labs.com/logo-v2-new.webp"
+          }
+        }
+      });
+      document.head.appendChild(script);
+
+      return () => {
+        document.title = 'Nat 20 Labs | Expert Web Development & SEO Management UK';
+        if (metaDescription) {
+          metaDescription.setAttribute('content', 'Nat 20 Labs provides high-performance React web development, technical SEO audits, and strategic SEO management for UK businesses.');
+        }
+        document.getElementById('blog-schema')?.remove();
+      };
+    }
+  }, [selectedPost]);
+
+  useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -45,10 +89,10 @@ function App() {
 
           <a href="/" className="logo" style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>
             <img 
-              src="/logo-v2-new.webp" 
+              src="/logo-optimized.webp" 
               alt="Nat 20 Labs" 
-              width="179"
-              height="148"
+              width="263"
+              height="175"
               fetchPriority="high"
               loading="eager"
               style={{ height: '175px', width: 'auto', display: 'block', flexShrink: 0 }} 
@@ -174,7 +218,7 @@ function App() {
             <section id="contact" className="section container" style={{ textAlign: 'center' }}>
               <div style={{ background: 'var(--bg-secondary)', padding: '6rem 2rem', borderRadius: '40px', border: '1px solid var(--border)' }} className="reveal">
                 <h2>Ready for a Critical Success?</h2>
-                <p style={{ maxWidth: '600px', margin: '0 auto 3rem' }}>Let's discuss how we can grow your business together through technical excellence and strategic SEO.</p>
+                <p style={{ maxWidth: '600px', margin: '0 auto 3rem' }}>Let's discuss how our <strong>web development</strong> and <strong>SEO management</strong> can grow your business through technical excellence and data-driven strategy.</p>
                 <a href="mailto:karl@nat20labs.com" className="btn btn-primary">Start Your Project</a>
               </div>
             </section>
@@ -209,12 +253,12 @@ function App() {
         <div className="container">
           <div style={{ marginBottom: '2rem' }}>
             <img 
-              src="/logo-v2-new.webp" 
+              src="/logo-optimized.webp" 
               alt="Nat 20 Labs" 
-              width="179"
-              height="148"
+              width="263"
+              height="175"
               loading="lazy"
-              style={{ height: '200px', width: 'auto', margin: '0 auto' }} 
+              style={{ height: '175px', width: 'auto', margin: '0 auto' }} 
             />
           </div>
           <p style={{ fontSize: '0.9rem' }}>&copy; {new Date().getFullYear()} Nat 20 Labs. All rights reserved.</p>
