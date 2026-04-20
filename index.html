@@ -196,7 +196,23 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap&font-display=swap" media="print" onload="this.media='all'">
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      {/* Static Pre-render for LCP Speed */}
+      <header>
+        <nav class="navbar container">
+          <div class="logo">
+            <img src="/logo-optimized.webp" alt="Nat 20 Labs" width="263" height="175" style="height: 175px; width: auto; display: block;">
+          </div>
+        </nav>
+      </header>
+      <main>
+        <section class="hero container">
+          <span class="section-tag">Freelance Web Dev & SEO</span>
+          <h1 class="hero-title">Rolling Criticals for <span>Your Business</span></h1>
+          <p>High-performance web applications and strategic SEO management. We turn technical complexity into business growth.</p>
+        </section>
+      </main>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
